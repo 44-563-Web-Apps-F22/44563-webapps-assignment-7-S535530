@@ -16,9 +16,67 @@
     <body>
         <h1>Treasure Hunt</h1>
 
+        <style>
+            .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: red;
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: green;
+	  }
+	}
+        </style>
+
         <p>Click on the chests to search for treasure.</p>
         <p id="chests">Number of chests checked is zero.</p>
         <p id="score">Score is unknown.</p>
         <p id="help">Help report</p>
+
+        <div class="flex-container">
+            <div class="row">
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+            </div>
+            <div class="row">
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+            </div>
+            <div class="row">
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+                <div><img src="helpicon.png"></div>
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+            </div>
+            <div class="row">
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+            </div>
+            <div class="row">
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+                <div><img src="treasure.jpg"></div>
+            </div>
+        </div>
     </body>
 </html>
