@@ -18,65 +18,114 @@
 
         <style>
             .flex-container {
-      display: flex;  flex-direction:row;
-      background-color: red;
-  }
+            display: flex;  flex-direction:row;
+            background-color: red;
+            }
 
-.flex-container > div {  /*div children of the flex container*/
-  background-color: #f1f1f1; 
-  margin: 10px;  padding: 20px;  font-size: 30px;
-}
+            .flex-container > div {  /*div children of the flex container*/
+            background-color: #f1f1f1; 
+            margin: 10px;  padding: 20px;  font-size: 30px;
+            }
 
-/* Responsive layout */
-@media (max-width: 600px) { 
-	 .flex-container{
-		 flex-direction:column;
-		 background-color: green;
-	  }
-	}
+            /* Responsive layout */
+            @media (max-width: 600px) { 
+	        .flex-container{
+		        flex-direction:column;
+		        background-color: green;
+	            }
+	        }
         </style>
 
         <p>Click on the chests to search for treasure.</p>
-        <p id="chests">Number of chests checked is zero.</p>
-        <p id="score">Score is unknown.</p>
-        <p id="help">Help report</p>
+        <div id="chests">Number of chests checked: </div>
+        <div id="score">Score is: </div>
+        <div id="help">Help report: </div>
 
         <div class="flex-container">
-            <div class="row">
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
+            <div class="flex-row">
+                <div><img src="treasurechest.jpg" id="1" height="50px" width="50px" onclick = "check(0)"></div>
+                <div><img src="treasurechest.jpg" id="2" height="50px" width="50px" onclick = "check(1)"></div>
+                <div><img src="treasurechest.jpg" id="3" height="50px" width="50px" onclick = "check(2)"></div>
+                <div><img src="treasurechest.jpg" id="4" height="50px" width="50px" onclick = "check(3)"></div>
+                <div><img src="treasurechest.jpg" id="5" height="50px" width="50px" onclick = "check(4)"></div>
             </div>
-            <div class="row">
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
+            <div class="flex-row">
+                <div><img src="treasurechest.jpg" id="6" height="50px" width="50px" onclick = "check(5)"></div>
+                <div><img src="treasurechest.jpg" id="7" height="50px" width="50px" onclick = "check(6)"></div>
+                <div><img src="treasurechest.jpg" id="8" height="50px" width="50px" onclick = "check(7)"></div>
+                <div><img src="treasurechest.jpg" id="9" height="50px" width="50px" onclick = "check(8)"></div>
+                <div><img src="treasurechest.jpg" id="10" height="50px" width="50px" onclick = "check(9)"></div>
             </div>
-            <div class="row">
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
-                <div><img src="helpicon.png"></div>
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
+            <div class="flex-row">
+                <div><img src="treasurechest.jpg" id="11" height="50px" width="50px" onclick = "check(10)"></div>
+                <div><img src="treasurechest.jpg" id="12" height="50px" width="50px" onclick = "check(11)"></div>
+                <div><img src="helpicon.png" id="help" height="50px" width="50px" onclick = "help()"></div>
+                <div><img src="treasurechest.jpg" id="14" height="50px" width="50px" onclick = "check(13)"></div>
+                <div><img src="treasurechest.jpg" id="15" height="50px" width="50px" onclick = "check(14)"></div>
             </div>
-            <div class="row">
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
+            <div class="flex-row">
+                <div><img src="treasurechest.jpg" id="16" height="50px" width="50px" onclick = "check(15)"></div>
+                <div><img src="treasurechest.jpg" id="17" height="50px" width="50px" onclick = "check(16)"></div>
+                <div><img src="treasurechest.jpg" id="18" height="50px" width="50px" onclick = "check(17)"></div>
+                <div><img src="treasurechest.jpg" id="19" height="50px" width="50px" onclick = "check(18)"></div>
+                <div><img src="treasurechest.jpg" id="20" height="50px" width="50px" onclick = "check(19)"></div>
             </div>
-            <div class="row">
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
-                <div><img src="treasure.jpg"></div>
+            <div class="flex-row">
+                <div><img src="treasurechest.jpg" id="21" height="50px" width="50px" onclick = "check(20)"></div>
+                <div><img src="treasurechest.jpg" id="22" height="50px" width="50px" onclick = "check(21)"></div>
+                <div><img src="treasurechest.jpg" id="23" height="50px" width="50px" onclick = "check(22)"></div>
+                <div><img src="treasurechest.jpg" id="24" height="50px" width="50px" onclick = "check(23)"></div>
+                <div><img src="treasurechest.jpg" id="25" height="50px" width="50px" onclick = "check(24)"></div>
             </div>
         </div>
+
+        <script>
+            var ids = ["1","2","3","4","5","6","7","8","9","10","11","12","help","14","15","16","17","18","19","20","21","22","23","24","25"]
+            var chestCount = 0
+            var score = 0
+            var lastCheck = 12
+            var treasureLocation = 18
+            
+            function check(position) {
+                image = document.getElementById(ids[position])
+                if(position == treasureLocation) {
+                    image.src = "treasure.jpg"
+                    score += 1
+                } else {
+                    image.src = "sadface.png"
+                }
+                chestCount += 1 
+                document.getElementById("chests").innerHTML = "Number of chests checked is " +chestCount;
+                document.getElementById("score").innerHTML = "Score is " + score
+                lastCheck = position;
+            }
+            function help() {
+                lastCh_row = parseInt(lastCheck / 5)
+                lastCh_column = parseInt(lastCheck % 5)
+                treasureLocation_r = parseInt(treasureLocation / 5)
+                treasureLocation_col = parseInt(treasureLocation % 5)
+                score += 2
+                document.getElementById("score").innerHTML = "Score is " + score
+                if(lastCh_row == treasureLocation_r) {
+                    if(lastCh_column < treasureLocation_col) {
+                        document.getElementById("help").innerHTML = "Right"
+                    } else if(lastCh_column > treasureLocation_col) {
+                        document.getElementById("help").innerHTML = "Left"
+                    } else {
+                        document.getElementById("help").innerHTML = "Sorry, no help available"
+                    }
+                } else if(lastCh_column == treasureLocation_col) {
+                    if(lastCh_row < treasureLocation_r) {
+                        document.getElementById("help").innerHTML = "Down"
+                    } else if(lastCh_row > treasureLocation_r) {
+                        document.getElementById("help").innerHTML = "Up"
+                    } else {
+                        document.getElementById("help").innerHTML = "Sorry, no help available"
+                    }
+                } else {
+                    document.getElementById("help").innerHTML = "Sorry, no help available"
+                }
+            }
+        </script>
     </body>
 </html>
